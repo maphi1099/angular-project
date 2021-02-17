@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name = 'Max';
+  username = 'insert username';
+  usernameEmpty(){
+    if (this.username == ''){
+      return true;
+    }
+    return false;
+  }
+  onResetUsername(){
+    this.username = '';
+  }
 }

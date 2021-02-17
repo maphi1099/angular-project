@@ -13,7 +13,10 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   protected allowNewServer = false;
   serverCreationStatus = 'No Server was created';
-  serverName = '';
+  serverName = 'add Servername';
+  serverCreated = false;
+  servers = ['First-Server'];
+  
 
   getAllowNewServer(){
     return this.allowNewServer;
@@ -28,11 +31,14 @@ export class ServersComponent implements OnInit {
     
   }
    onCreateServer(){
-     this.serverCreationStatus = 'Server was Created!';
+     this.serverCreationStatus = 'Server was Created! Name is '+ this.serverName;
+     this.serverCreated = true;
+     this.servers.push(this.serverName);
    }
    onUpdateServerName(event: any){
      //console.log(event);
     this.serverName = (<HTMLInputElement>event.target).value;
    }
 
+   
 }

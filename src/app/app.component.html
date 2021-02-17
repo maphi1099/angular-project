@@ -11,3 +11,19 @@
     <div>
 </div>
 
+<hr>
+<label>Username</label>
+<div class="container">
+    <div class="row">
+        <input 
+        type="text"
+        class="form-control"
+        [(ngModel)]="username">
+<p class="username">Username: {{ username }}</p>
+<button 
+        class="btn btn-primary" 
+        [disabled]="usernameEmpty()"
+        (click)="onResetUsername()">Reset Username</button>
+    <div>
+</div>
+
